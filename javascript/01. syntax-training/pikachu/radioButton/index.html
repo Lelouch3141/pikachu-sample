@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="pikachu.js"></script>
+</head>
+<body>
+    
+    <h1>光宙...これが俺の名前だ...</h1>
+
+    <!-- テキストボックスの名前 -->
+    <p>type : </p>
+    <form id = "types">
+        <label><input name="type" type="radio" value="でんき">でんき</label>
+        <label><input name="type" type="radio" value="ほのお">ほのお</label>
+        <label><input name="type" type="radio" value="みず">みず</label>
+        <label><input name="type" type="radio" value="じめん">じめん</label>
+    </form>
+
+    <!-- ボタンを用意
+    クリックした時の処理に"buttonClick()"を用意 -->
+    <input id="btn" type="button" value="button" onclick="buttonClick();"/>
+
+    <!-- 判定結果を表示するやつ -->
+    <p id = "message"></p>
+
+    <!-- jsの処理 -->
+    <script>
+        // ボタンを押した際の処理
+        function buttonClick() {
+            // idが"types"のHTML文の値を取得
+            // formからパクってくる
+            let formElements = document.getElementById('types')
+
+            // 各idにバラす
+            let radioValues = formElements.type
+
+            // 表示に使う変数。どのタイプを選択しているか保存する。
+            var currentValue = ""
+
+            //for文で、取ってきた四つのradioボタンの要素に対して全取得
+            for(let i = 0; i < radioValues.length; i++) {
+                //if(選択されている時)
+                if(radioValues[i].checked === true) {
+                    //選択されている値をcurrentValueに保存
+                    currentValue = radioValues[i].value;
+                    console.log(currentValue);
+                }
+            }
+
+            // ピカチュウ関数の結果をresultに格納
+            let result = pikachu(currentValue)
+
+            // 判定結果を表示するやつにピカチュウ関数の結果を挿入♂
+            message.innerHTML = `こうかは ${ result }`
+
+        }
+    </script>
+</body>
+</html>
