@@ -50,6 +50,7 @@ const mailBox = [];
         //5個メールが入っているメールボックスなら、下記のように
         mailBox.splice(4, 1);
         ```
+    + ```return drawLetter```してください。
 
 + ランダム関数を用意してください。
   + 引数: number (整数が入る想定)

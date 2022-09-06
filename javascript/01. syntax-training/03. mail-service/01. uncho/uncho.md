@@ -52,6 +52,7 @@ const mailBox = [];
         //第二引数: 何個削除するか
         mailBox.splice(0, 1);
         ```
+    + ```return drawLetter```してください。
 
 + ランダム関数を用意してください。
   + 引数: number (整数が入る想定)
