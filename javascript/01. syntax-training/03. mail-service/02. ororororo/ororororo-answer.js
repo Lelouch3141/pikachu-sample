@@ -1,15 +1,22 @@
+/*
+    (2022.09.09) Stackの実装
+ */
+
 //メールボックスを用意
 const mailBox = [];
 
+//市民が投函する動作
 //投函関数
-function post(letter) {
+function postLetter(letter) {
     mailBox.push(letter);
 }
 
+//郵便局員が手紙を取り出す動作
+//順序は、市民が入れた順番に、です。
 //後入れ、先出し
 //late in first out
 //要はゲロ
-function ororororo() {
+function getLetter() {
     //メールボックスに何個入ってるか
     const letterCount = mailBox.length;
 
@@ -38,13 +45,16 @@ const randomValue = randomFunc(10);
 
 //10以下の乱数が上限のforループ
 for (i = 0; i < randomValue; i++) {
-    //うんこ1 ～ うんこ9を投函
-    post(`うんこ${i + 1}`);
+    //手紙を投函
+    //手紙の内容は、各々"うんこ1"～"うんこn"
+    postLetter(`うんこ${i + 1}`);
 }
 
-//うんこ出す処理
-for (i = 0; i < randomValue; i++) {
+//郵便局員がn個の手紙を取り出します
+//順序は、市民が入れた順番に、です。
+//メールボックスに入っている手紙の個数分、配列を回します。
+for (i = 0; i < mailBox.length; i++) {
     //1回目のうんこを保存
-    const getUncho = ororororo();
-    console.log(`どれどれ... ${getUncho}か...`);
+    const letter = getLetter();
+    console.log(`どれどれ... ${letter}か...`);
 }
