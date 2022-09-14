@@ -1,37 +1,46 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8" />
-    <title></title>
-    <script src="pikachu.js"></script>
-</head>
-<body>
-    
-    <h1>光宙...これが俺の名前だ...</h1>
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <script src="pikachu.js"></script>
+        <link rel="stylesheet" type="text/css" href="pikachu.css" />
+    </head>
+    <body>
+        <h1 class="title">Pikachu</h1>
+        <ul>
+            <li>aaa</li>
+        </ul>
 
-    <!-- テキストボックスの名前 -->
-    <label>type：<input id="txt" type="text"></label>
+        <div id="pikachuForm">
+            <input id="txt" type="text" value="Please input any type!!" />
 
-    <!-- ボタンを用意
-    クリックした時の処理に"buttonClick()"を用意 -->
-    <input id="btn" type="button" value="button" onclick="buttonClick();"/>
+            <!-- ボタンを用意
+        クリックした時の処理に"buttonClick()"を用意 -->
+            <input
+                id="btn"
+                type="button"
+                value="button"
+                onclick="buttonClick();"
+            />
+        </div>
 
-    <!-- 判定結果を表示するやつ -->
-    <p id = "message"></p>
+        <!-- 判定結果を表示するやつ -->
+        <p id="message"></p>
 
-    <!-- jsの処理 -->
-    <script>
-        // ボタンを押した際の処理
-        function buttonClick() {
-            // idが"txt"のHTML文の値を取得
-            let text = document.getElementById("txt").value;
+        <!-- jsの処理 -->
+        <script>
+            // ボタンを押した際の処理
+            function buttonClick() {
+                // idが"txt"のHTML文の値を取得
+                let text = document.getElementById("txt").value;
 
-            // ピカチュウ関数の結果をresultに格納
-            let result = pikachu(text)
+                // ピカチュウ関数の結果をresultに格納
+                let result = pikachu(text);
 
-            // 判定結果を表示するやつにピカチュウ関数の結果を挿入♂
-            message.innerHTML = `こうかは ${ result }`
-        }
-    </script>
-</body>
+                // 判定結果を表示するやつにピカチュウ関数の結果を挿入♂
+                message.innerHTML = `こうかは ${result}`;
+            }
+        </script>
+    </body>
 </html>
