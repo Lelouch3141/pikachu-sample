@@ -26,10 +26,10 @@ const onClickAddButton = () => {
     //listItemのclassに"listItems"を設定(CSS適用のため)
     listItem.className = "list_items";
 
-    //今表示している一覧のtaskListにlistItemを追加して、newTaskListに保存
+    //今表示している一覧のtaskElementにlistItemを追加して、newTaskElementに保存
     const newTaskElement = taskElement.appendChild(listItem);
 
-    //newTaskListのテキストに、taskValueを代入
+    //newTaskElementのテキストに、taskValueを代入
     newTaskElement.innerHTML = taskValue;
 
     //削除ボタンである、deleteButtonを作成
