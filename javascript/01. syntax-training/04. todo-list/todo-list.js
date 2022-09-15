@@ -5,7 +5,7 @@ const formValue = document.getElementById("form_value");
 const addButton = document.getElementById("add_button");
 
 //現在表示しているlist
-const taskElement = document.getElementById("task_list");
+const taskTable = document.getElementById("task_table");
 
 // 追加ボタンをクリック時の処理を登録
 addButton.addEventListener("click", (event) => {
@@ -20,23 +20,20 @@ const onClickAddButton = () => {
     //フォームの値を空に
     formValue.value = "";
 
-    //liタグのlistItemを用意
-    const listItem = document.createElement("li");
+    const td1 = document.createElement("td");
 
-    //listItemのclassに"listItems"を設定(CSS適用のため)
-    listItem.className = "list_items";
+    const td2 = document.createElement("td");
 
-    //今表示している一覧のtaskElementにlistItemを追加して、newTaskElementに保存
-    const newTaskElement = taskElement.appendChild(listItem);
+    const tr = document.createElement("tr");
 
-    //newTaskElementのテキストに、taskValueを代入
-    newTaskElement.innerHTML = taskValue;
+    td1.innerHTML = taskValue;
 
     //削除ボタンである、deleteButtonを作成
     const deleteButton = document.createElement("button");
 
     //deleteButtonのclassに"deleteButton"を設定(CSS適用のため)
-    deleteButton.className = "delete_button";
+    deleteButton.id = "delete_button";
+    deleteButton.className = "button";
 
     //deleteButtonのテキストを"delete"に変更
     deleteButton.innerHTML = "delete";
@@ -46,15 +43,20 @@ const onClickAddButton = () => {
         onClickDeleteButton(deleteButton);
     });
 
-    //タスクにボタンを追加
-    newTaskElement.appendChild(deleteButton);
+    td2.appendChild(deleteButton);
+
+    tr.appendChild(td1);
+
+    tr.appendChild(td2);
+
+    taskTable.appendChild(tr);
 };
 
 //削除ボタン押下時の処理
 const onClickDeleteButton = (deleteButton) => {
     //deleteButtonの一番近いli要素を取得
-    const deleteTask = deleteButton.closest("li");
+    const deleteTask = deleteButton.closest("tr");
 
     //deleteTaskを削除
-    taskList.removeChild(deleteTask);
+    taskTable.removeChild(deleteTask);
 };
