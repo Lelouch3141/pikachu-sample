@@ -1,0 +1,102 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "ゴシック体";
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0;
+    gap: 2rem;
+}
+
+#title {
+}
+
+#form_value {
+    height: 2.4em;
+    width: 30rem;
+    padding: 0 16px;
+    border-radius: 4px;
+    border: none;
+    box-shadow: 0 0 0 1px #ccc inset;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+#form_value:focus {
+    outline: 0;
+    box-shadow: 0 0 0 2px rgb(33, 150, 243) inset;
+}
+
+#form_component {
+}
+
+#task_component {
+    display: flex;
+    flex-direction: column;
+
+    width: 50rem;
+    height: 100rem;
+}
+
+#task_table {
+    text-align: center;
+}
+
+#task_table tr td:nth-child(1) {
+    width: 15rem;
+    font-size: 1.5rem;
+}
+
+#task_table tr td:nth-child(2) {
+    width: 10rem;
+}
+
+#task_table td {
+    height: 3rem;
+}
+
+#task_table tr:nth-child(2n + 1) td {
+    background-color: #e0e0e0;
+}
+
+#task_table tr:nth-child(2n) td {
+    background: #f4f4f4;
+}
+
+.listItems {
+    display: flex;
+    flex-direction: column;
+}
+
+.button {
+    border-radius: 2rem;
+    border: none;
+    width: 7.5rem;
+    height: 2.5rem;
+
+    color: white;
+}
+
+#add_button {
+    background-color: #7fbfff;
+}
+#add_button:hover {
+    background-color: #a3d1ff;
+}
+
+#delete_button {
+    background-color: #ff7f7f;
+}
+
+#delete_button:hover {
+    background-color: #ffa8a8;
+}
